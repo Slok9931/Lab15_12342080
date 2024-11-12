@@ -1,6 +1,6 @@
 #!/bin/bash
 
-awk -F, '{if ($8 == 1 && $2 == 1) print "Male with Heart Disease"; if ($8 == 0 && $2 == 1) print "Female with Heart Disease";}' heart.csv | \
+awk -F, '{if ($8 == 1 && $2 == 1) print "Male with Heart Disease"; if ($8 == 1 && $2 == 0) print "Female with Heart Disease";}' heart.csv | \
 sort | uniq -c > gender_vs_heart_disease.txt
 
 echo "Data processed successfully, saved to gender_vs_heart_disease.txt."
